@@ -4,11 +4,8 @@ function M.load_lines()
   local data_file_dir = require("hyper-harpoon").data_file_dir;
   local data_file_name = require("hyper-harpoon").data_file_name;                                          -- Corrected to use data_file_name
   local current_tab = require("hyper-harpoon").current_tab;
-  local filepath = vim.fn.stdpath('data') .. data_file_dir .. "/" .. current_tab .. "/" .. data_file_name; -- Construct the full file path
+  local filepath =  data_file_dir .. "/" .. current_tab .. "/" .. data_file_name; -- Construct the full file path
   local lines = {}
-
-  -- Debug print to verify the filepath
-  print("Loading lines from file:", filepath)
 
   local file = io.open(filepath, "r") -- Open the file in read mode
   if file then

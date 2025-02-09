@@ -4,11 +4,8 @@ function M.save_lines(lines, file_mode)
   local data_file_dir = require("hyper-harpoon").data_file_dir;
   local data_file_name = require("hyper-harpoon").data_file_name -- Just the filename part
   local current_tab = require("hyper-harpoon").current_tab;
-  local base_data_dir = vim.fn.stdpath('data') .. data_file_dir .. "/" .. current_tab;
+  local base_data_dir = data_file_dir .. "/" .. current_tab;
   local filepath = base_data_dir .. "/" .. data_file_name;
-  -- Debug print statements - ADD THESE:
-  print("base_data_dir:", base_data_dir)
-
 
   -- Ensure the directory exists. Create parent directories if necessary.
   local ok, err = pcall(vim.fn.mkdir, base_data_dir, "p") -- 'p' flag for parent directories

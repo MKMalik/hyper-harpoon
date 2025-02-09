@@ -10,8 +10,6 @@ function M.add_relative_path(buf)
   -- Remove the cwd part from the full path to get the relative path
   local relative_path = string.sub(full_path, #cwd + 2)
 
-  print("Current path: " .. relative_path);
-
   require("hyper-harpoon.save_lines").save_lines({ relative_path }, "a")
 
   return relative_path

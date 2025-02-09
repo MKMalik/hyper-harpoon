@@ -3,8 +3,9 @@ local M = {};
 M.floating_buffer = nil;
 M.data_file_dir = nil;
 M.data_file_name = nil;
-M.current_tab = "1";
-M.tabs = { "1", "2", "3" };
+M.current_tab = nil;
+M.tabs = {};
+M.default_tab_name = "default";
 
 M.setup = function()
   require("hyper-harpoon.setup").setup();
@@ -15,7 +16,7 @@ M.say_hello = function()
 end;
 
 M.open_hyperharpoon = function()
-  M.floating_buffer = require("hyper-harpoon.open_buffer").open_hyperharpoon();
+  M.floating_buffer = require("hyper-harpoon.open_buffer").open_hyperharpoon(M.tabs, M.current_tab);
 end;
 
 M.add_path = function()
