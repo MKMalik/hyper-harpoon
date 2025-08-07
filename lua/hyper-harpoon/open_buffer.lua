@@ -13,7 +13,8 @@ function M.open_hyperharpoon(tab_names, current_tab_name)
   local base_height = math.floor(vim.o.lines * 0.6)
   local tab_bar_height = 1                            -- Height for the tab bar (1 line)
   local content_height = base_height - tab_bar_height -- Height for content below tabs
-  local title = " Tab:" .. current_tab_name .. " ";
+  local title = " Tab:" .. (current_tab_name or "Unnamed") .. " "
+
 
 
   -- 3. Position the floating window at the top center
