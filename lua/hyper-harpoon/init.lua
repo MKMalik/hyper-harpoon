@@ -3,7 +3,7 @@ local M = {};
 M.floating_buffer = nil;
 M.data_file_dir = nil;
 M.data_file_name = nil;
-M.current_tab = nil;
+M.current_tab = 'default';
 M.tabs = {};
 M.default_tab_name = "default";
 
